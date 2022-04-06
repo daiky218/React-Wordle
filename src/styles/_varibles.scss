@@ -1,0 +1,47 @@
+// color
+$red: #f93920;
+$orange: #fc8800;
+$green: #3bb346;
+$blue: #0064fa;
+$black: #000000;
+$mustard-yellow:#C9B458;
+$dark-sea-green:#6AAA64;
+$white: #ffffff;
+$grey-500: #787c7e;
+$grey-400: #878a8c;
+$grey-300: #d3d6da;
+$grey-200: #edeff1;
+$grey-100: #F4F5F5;
+// light color
+$light-red: #fef2ed;
+$light-orange: #fff8ea;
+$light-green: #ecf7ec;
+$light-blue: #eaf5ff;
+// shadow
+$light-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+// notification
+// color
+$notification-bg-success: $light-green;
+$notification-bg-info: $light-blue;
+$notification-bg-warning: $light-orange;
+$notification-bg-error: $light-red;
+$notification-border-color-success: $green;
+$notification-border-color-info: $blue;
+$notification-border-color-warning: $orange;
+$notification-border-color-error: $red;
+$notification-content-color: $black;
+
+//keyboard
+$keyboard-key-bg-correct:$dark-sea-green;
+$keyboard-key-bg-present:$mustard-yellow;
+$keyboard-key-bg-absent:$grey-500;
+$keyboard-key-bg-normal:$grey-300;
+$keyboard-key-bg-hover:darken($grey-300,10%);
+
+//board
+$board-cell-border-color-normal:$grey-300;
+$board-cell-border-color-typing:$black;
+$board-cell-bg-correct:$dark-sea-green;
+$board-cell-bg-present:$mustard-yellow;
+$board-cell-bg-absent:$grey-500;

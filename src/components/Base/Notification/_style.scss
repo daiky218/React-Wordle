@@ -1,0 +1,75 @@
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+.notifications-container {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+}
+.notification {
+    border: 1.5px solid;
+    max-width: 350px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    box-shadow: $light-shadow;
+    margin-bottom: 15px;
+    display: flex;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    &.warning {
+        background-color: $notification-bg-warning;
+        border-color: $notification-border-color-warning;
+    }
+    &.info {
+        background-color: $notification-bg-info;
+        border-color: $notification-border-color-info;
+    }
+    &.success {
+        background-color: $notification-bg-success;
+        border-color: $notification-border-color-success;
+    }
+    &.error {
+        background-color: $notification-bg-error;
+        border-color: $notification-border-color-error;
+    }
+    &.slideOut {
+        transform: translateX(150%);
+    }
+    &.slideIn {
+        animation-name: slideIn;
+        animation-duration: 0.3s;
+        animation-timing-function: ease-in-out;
+    }
+    .content {
+        color: $notification-content-color;
+        font-weight: 450;
+        overflow: hidden;
+        word-break: break-word;
+    }
+    .close {
+        margin-left: 24px;
+        width: 22px;
+        transition: all 0.3s ease;
+        position: relative;
+        border-radius: 4px;
+        font-size: 1rem;
+        color: $grey-500;
+        &::before {
+            content: "\2715";
+            position: absolute;
+            top: 50%;
+            transform: translate(50%,-50%);
+            right: 50%;
+        }
+        &:hover {
+            background-color: rgba(220, 220, 220, 0.3);
+            cursor: pointer;
+        }
+    }
+}

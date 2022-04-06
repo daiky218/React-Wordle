@@ -1,0 +1,37 @@
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.row {
+    display: flex;
+}
+.key {
+    border: none;
+    background-color: $keyboard-key-bg-normal;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:4px 3px;
+    padding: 5px;
+    min-width: 40px;
+    height: 50px;
+    border-radius: 4px;
+    &:hover{
+        filter: brightness(90%);
+        cursor: pointer;
+    }
+    &.correct{
+        background-color: $keyboard-key-bg-correct;
+        color: $white;
+    }
+    &.present{
+        background-color: $keyboard-key-bg-present;
+        color: $white;
+    }
+    &.absent{
+        background-color: $keyboard-key-bg-absent;
+        color: $white;
+    }
+}

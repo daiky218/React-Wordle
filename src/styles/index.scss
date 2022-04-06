@@ -1,0 +1,10 @@
+@import './mixins';
+@import './varibles';
+@import './animation';
+
+// component
+@import '../components/Keyboard/style';
+@import '../components/Board/style';
+@import '../components/Modal/StatisticsModal/style';
+@import '../components/Base/Modal/style';
+@import '../components/Base/Notification/style';
