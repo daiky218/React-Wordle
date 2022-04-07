@@ -77,7 +77,6 @@ function App() {
     };
     return (
         <div className="App">
-
             <Header 
             setIsStatisticsModalOpen={setIsStatisticsModalOpen}
             setIsSettingsModalOpen={setIsSettingsModalOpen}
@@ -99,6 +98,13 @@ function App() {
                     isStatisticsModalOpen,
                     setIsStatisticsModalOpen,
                 ])}
+                gameStatistics={{
+                    totalTries: 0,
+                    successRate: 0,
+                    currentStreak: 0,
+                    bestStreak: 0,
+                }}
+                guessDistribution={[0, 0, 0, 0, 0, 0]}
             />
             <HelpModal
                 isOpen={isHelpModalOpen}

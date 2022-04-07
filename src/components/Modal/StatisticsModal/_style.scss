@@ -1,0 +1,74 @@
+.statistics-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.statistics-container {
+    display: flex;
+    margin: 15px 0px;
+    .statistic {
+        text-align: center;
+        margin: 0px 5px;
+        width: 80px;
+        &-data {
+            font-size: 1.9rem;
+            font-weight: bold;
+        }
+        &-label {
+            font-size: 0.8rem;
+        }
+    }
+}
+.distributions-container {
+    width: 100%;
+    margin: 15px 0;
+    .distribution {
+        display: flex;
+        // justify-content: space-between;
+        margin-bottom: 6px;
+        font-size: 0.9rem;
+        &-key {
+            width: 8%;
+
+            text-align: center;
+        }
+        &-value {
+            text-align: center;
+            background-color: $grey-500;
+            color: $white;
+            &.max{
+                background-color: lighten($blue, 5%);
+            }
+            &.no-success{
+                background-color:  $grey-500;
+            }
+        }
+    }
+}
+.statistics-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.countdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 35px;
+}
+.share {
+    width: 120px;
+    height: 40px;
+    border-radius: 6px;
+    background-color: lighten($blue, 5%);
+    box-shadow: $light-shadow;
+    color: $white;
+    font-size: 1.2rem;
+    border: none;
+    &:hover {
+        cursor: pointer;
+        background-color: darken($blue, 5%);
+    }
+}

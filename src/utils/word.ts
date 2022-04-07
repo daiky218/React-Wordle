@@ -6,9 +6,12 @@ export const getTodayWord = () => {
     const msOfDay = 86400000;
     const nowDate = Date.now();
     const wordIndex = Math.floor((nowDate - startDate) / msOfDay)
-    return WORDS[wordIndex % WORDS.length].toLocaleUpperCase();
+    const nextDay=(wordIndex+1)*msOfDay+startDate;
+    return {todayWord:WORDS[wordIndex % WORDS.length].toLocaleUpperCase(),tomorrow:nextDay};
 }
-
+export const getNextWordTime=()=>{
+    return Date.now();
+}
 export const isSufficientLengthWord = (word: string) => {
     return word.length === MAX_GUESS_LENGTH;
 }
@@ -16,6 +19,6 @@ export const isInvalidWord = (word: string) => {
     return !WORDS.includes(word.toLocaleLowerCase());
 }
 export const isRightWord = (word: string) => {
-    return word === getTodayWord();
+    return word === todayWord;
 }
-export const todayWord =getTodayWord();
+export const {todayWord,tomorrow} =getTodayWord();

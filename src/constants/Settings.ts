@@ -4,3 +4,7 @@ export const DEFAULT_NOTIFICATION_DURATION=2000;
 export const DEFAULT_NOTIFICATION_ANIMATION_DURATION=300;
 export const DEFAULT_CELL_REVEAL_DURATION=1300;
 export const WORDLE_TEXT='Wordle';
+export const TOTAL_TRIES_TEXT='Total tries'
+export const SUCCESS_RATE_TEXT='Success rate'
+export const CURRENT_STREAK_TEXT='Current streak'
+export const BEST_STREAK_TEXT='Best streak'
