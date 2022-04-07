@@ -5,6 +5,7 @@ import Notification, { NotificationProps } from "./Notification";
 import { nanoid } from "nanoid";
 import { DEFAULT_NOTIFICATION_DURATION } from "../../../constants/Settings";
 import { NotifyProps } from ".";
+import classNames from "classnames";
 
 // 通知方法类型
 type NotificationsProps = NotificationProps & {
@@ -52,8 +53,9 @@ const NotificationManager = ({ exposeNotify }: NotificationManagerProps) => {
     useEffect(() => {
         exposeNotify((options) => createNotification(options));
     });
+    const className = classNames("notifications-container");
     return createPortal(
-        <div className="notifications-container">
+        <div className={className}>
             {notifications.map((notification) => (
                 <Notification
                     key={notification.id}
@@ -62,6 +64,7 @@ const NotificationManager = ({ exposeNotify }: NotificationManagerProps) => {
                     duration={notification.duration}
                     onClose={notification.onClose}
                     afterClosed={notification.afterClosed}
+                    position={notification.position}
                 />
             ))}
         </div>,

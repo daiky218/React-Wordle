@@ -9,19 +9,22 @@
 }
 .notifications-container {
     position: fixed;
-    top: 16px;
+    top: 10%;
     right: 16px;
 }
 .notification {
     border: 1.5px solid;
-    max-width: 350px;
     padding: 8px 12px;
+    width: fit-content;
+    max-width: 400px;
     border-radius: 5px;
     box-shadow: $light-shadow;
     margin-bottom: 15px;
     display: flex;
-    position: relative;
+    justify-content: space-between;
+    align-items: center;
     transition: transform 0.3s ease-in-out;
+    margin-left: auto;
     &.warning {
         background-color: $notification-bg-warning;
         border-color: $notification-border-color-warning;
@@ -53,8 +56,9 @@
         word-break: break-word;
     }
     .close {
-        margin-left: 24px;
-        width: 22px;
+        margin-left: 12px;
+        width: 24px;
+        height: 24px;
         transition: all 0.3s ease;
         position: relative;
         border-radius: 4px;
@@ -64,8 +68,8 @@
             content: "\2715";
             position: absolute;
             top: 50%;
-            transform: translate(50%,-50%);
-            right: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
         &:hover {
             background-color: rgba(220, 220, 220, 0.3);

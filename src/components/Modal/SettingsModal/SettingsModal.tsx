@@ -1,20 +1,17 @@
 import React from "react";
 import Modal from "../../Base/Modal/Modal";
-type StatisticsModalProps = {
+type SettingsModalProps = {
     isOpen: boolean;
     setOpen: (value: boolean) => void;
 };
-const Statistics = () => {
-    return <div>Statistics</div>;
-};
-const StatisticsModal = ({ isOpen, setOpen }: StatisticsModalProps) => {
+const SettingsModal = ({ isOpen, setOpen }: SettingsModalProps) => {
     const handleClose = () => {
         setOpen(false);
     };
     return (
         <Modal isOpen={isOpen} onClose={handleClose}>
-            <Statistics />
+            SETTINGS
         </Modal>
     );
 };
-export default React.memo(StatisticsModal);
+export default React.memo(SettingsModal);

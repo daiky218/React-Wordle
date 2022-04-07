@@ -1,0 +1,16 @@
+.help-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    .help-title{
+        margin-bottom: 15px;
+    }
+    .help-text{
+        margin-bottom: 15px;
+        font-size: .9rem;
+        color:$grey-400;
+        text-align: center;
+    }
+}

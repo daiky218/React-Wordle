@@ -1,0 +1,41 @@
+.header {
+    display: flex;
+    border-bottom: 1px solid $grey-300;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+
+    .left {
+        width: 33%;
+    }
+    .center {
+        width: 33%;
+        .title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.8rem;
+        }
+    }
+    .right {
+        width: 33%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    .icon {
+        border: none;
+        width: 35px;
+        height: 35px;
+        background-color: transparent;
+        font-size: 1.4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 2px;
+        transition: font-size 0.2s ease;
+        &:hover {
+            cursor: pointer;
+            font-size: 1.7rem;
+        }
+    }
+}

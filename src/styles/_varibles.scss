@@ -21,7 +21,6 @@ $light-blue: #eaf5ff;
 $light-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
 // notification
-// color
 $notification-bg-success: $light-green;
 $notification-bg-info: $light-blue;
 $notification-bg-warning: $light-orange;
@@ -31,6 +30,9 @@ $notification-border-color-info: $blue;
 $notification-border-color-warning: $orange;
 $notification-border-color-error: $red;
 $notification-content-color: $black;
+
+//modal
+$modal-mask-color:rgba(208, 208, 208, 0.741);
 
 //keyboard
 $keyboard-key-bg-correct:$dark-sea-green;
@@ -45,3 +47,4 @@ $board-cell-border-color-typing:$black;
 $board-cell-bg-correct:$dark-sea-green;
 $board-cell-bg-present:$mustard-yellow;
 $board-cell-bg-absent:$grey-500;
+

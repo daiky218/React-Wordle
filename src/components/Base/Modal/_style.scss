@@ -1,0 +1,49 @@
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    &.mask {
+        background-color: $modal-mask-color;
+    }
+}
+.children-container {
+    width: fit-content;
+    min-height: 150px;
+    border-radius: 12px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    padding: 20px 25px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: $light-shadow;
+    background-color: $white;
+    position: relative;
+    .close {
+        width: 26px;
+        height: 26px;
+        top: 10px;
+        right: 10px;
+        position: absolute;
+        transition: all 0.3s ease;
+        font-size: 1.3rem;
+        color: $grey-500;
+    border-radius: 6px;
+
+        &::before {
+            content: "\2715";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &:hover {
+            background-color: rgba(220, 220, 220, 0.3);
+            cursor: pointer;
+        }
+    }
+}

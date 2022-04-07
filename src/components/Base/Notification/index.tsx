@@ -10,6 +10,7 @@ export type NotifyProps = {
 };
 type NotifyOptionsProps = {
     content: string;
+    position?:'topLeft'|'topRight'|'center'
     type?: "success" | "info" | "warning" | "error";
     duration?: number;
     afterClosed?:Function;

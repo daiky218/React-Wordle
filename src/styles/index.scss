@@ -1,10 +1,13 @@
 @import './mixins';
 @import './varibles';
 @import './animation';
-
+@import './layout';
 // component
 @import '../components/Keyboard/style';
 @import '../components/Board/style';
-@import '../components/Modal/StatisticsModal/style';
 @import '../components/Base/Modal/style';
+@import '../components/Modal/StatisticsModal/style';
+@import '../components/Modal/HelpModal/style';
+
 @import '../components/Base/Notification/style';
+@import '../components/Header/style';
