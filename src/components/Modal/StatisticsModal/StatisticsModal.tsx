@@ -3,21 +3,25 @@ import Modal from "../../Base/Modal/Modal";
 import Countdown from "./Countdown";
 import Distribution from "./Distribution";
 import StatisticsBar, { GameStatistics } from "./StatisticsBar";
-type StatisticsProps = {
-    gameStatistics: GameStatistics;
+export type GameStats = GameStatistics&{
     guessDistribution: number[];
+    gamesFailed:number;
+};
+type StatisticsProps = {
+    gameStats: GameStats;
 };
 type StatisticsModalProps = {
     isOpen: boolean;
     setOpen: (value: boolean) => void;
-} & StatisticsProps;
-const Statistics = ({ gameStatistics, guessDistribution }: StatisticsProps) => {
+    gameStats: GameStats;
+};
+const Statistics = ({ gameStats }: StatisticsProps) => {
     return (
         <div className="statistics-content">
             <h3>Statistics</h3>
-            <StatisticsBar gameStatistics={gameStatistics} />
+            <StatisticsBar gameStatistics={gameStats} />
             <h3>Guess Distribution</h3>
-            <Distribution guessDistribution={guessDistribution} />
+            <Distribution guessDistribution={gameStats.guessDistribution} />
             <div className="statistics-row">
                 <div className="countdown">
                     <h3 className="countdown-text">New word in</h3>
@@ -31,18 +35,14 @@ const Statistics = ({ gameStatistics, guessDistribution }: StatisticsProps) => {
 const StatisticsModal = ({
     isOpen,
     setOpen,
-    gameStatistics,
-    guessDistribution,
+    gameStats,
 }: StatisticsModalProps) => {
     const handleClose = () => {
         setOpen(false);
     };
     return (
         <Modal isOpen={isOpen} onClose={handleClose}>
-            <Statistics
-                gameStatistics={gameStatistics}
-                guessDistribution={guessDistribution}
-            />
+            <Statistics gameStats={gameStats} />
         </Modal>
     );
 };

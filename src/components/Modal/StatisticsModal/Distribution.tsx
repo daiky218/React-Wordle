@@ -1,6 +1,7 @@
 import classNames from "classnames";
+// export type GuessDistribution = number[];
 
- type DistributionProps = {
+type DistributionProps = {
     guessDistribution: number[];
 };
 const Distribution = ({ guessDistribution }: DistributionProps) => {
@@ -16,8 +17,11 @@ const Distribution = ({ guessDistribution }: DistributionProps) => {
                     <div className="distribution" key={index}>
                         <div className="distribution-key">{index + 1}</div>
                         <div
-                            className={classNames('distribution-value',{'max':value===max,'no-success':max===0})}
-                            style={{ width: `${widthPercentage[index]||5}%` }}
+                            className={classNames("distribution-value", {
+                                max: value === max,
+                                "no-success": max === 0,
+                            })}
+                            style={{ width: `${widthPercentage[index] || 5}%` }}
                         >
                             {value}
                         </div>
