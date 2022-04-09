@@ -20,10 +20,35 @@ import Header from "./components/Header/Header";
 import HelpModal from "./components/Modal/HelpModal/HelpModal";
 import SettingsModal from "./components/Modal/SettingsModal/SettingsModal";
 import useLoaclStorage from "./hooks/useLocalStorage";
-
+type GameState = {
+    guesses: string[];
+    todayWord: string;
+};
 function App() {
     const [guess, setGuess] = useFixedLengthString(MAX_GUESS_LENGTH);
-    const [guesses, setGuesses] = useLoaclStorage<string[]>("guesses", []);
+    const [gameStats, setGameStats] = useLoaclStorage<GameStats>("gameStats", {
+        totalTries: 0,
+        successRate: 0,
+        currentStreak: 0,
+        bestStreak: 0,
+        guessDistribution: [0, 0, 0, 0, 0, 0],
+        gamesFailed: 0,
+    });
+    const [gameState, setGameState] = useLoaclStorage<GameState>("gameState", {
+        guesses: [],
+        todayWord: todayWord,
+    });
+    const [guesses, setGuesses] = useState<string[]>(() => {
+        if (todayWord !== gameState.todayWord) {
+            setGameState({
+                guesses: [],
+                todayWord: todayWord,
+            });
+            return [];
+        }
+        return gameState.guesses;
+    });
+
     const [isGameWin, setIsGameWin] = useState<boolean>(() =>
         guesses.includes(todayWord)
     );
@@ -35,14 +60,6 @@ function App() {
     const [isSettingsModalOpen, setIsSettingsModalOpen] =
         useState<boolean>(false);
     const [isHelpModalOpen, setIsHelpModalOpen] = useState<boolean>(false);
-    const [gameStats, setGameStats] = useLoaclStorage<GameStats>("gameStats", {
-        totalTries: 0,
-        successRate: 0,
-        currentStreak: 0,
-        bestStreak: 0,
-        guessDistribution: [0, 0, 0, 0, 0, 0],
-        gamesFailed: 0,
-    });
     useEffect(() => {
         if (isGameWin) {
             Notification.success({
@@ -56,7 +73,7 @@ function App() {
             });
         }
     }, []);
-    const updateGameStats = (isGameWin:boolean) => {
+    const updateGameStats = (isGameWin: boolean) => {
         const stats = gameStats;
         stats.totalTries += 1;
         if (isGameWin) {
@@ -125,6 +142,10 @@ function App() {
         }
         setGuessesStates([...guessesStates, updateKeysStates(guess)]);
         setGuesses([...guesses, guess]);
+        setGameState({
+            ...gameState,
+            guesses: [...guesses, guess],
+        });
         setGuess.reset();
     };
 
